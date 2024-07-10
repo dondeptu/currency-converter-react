@@ -1,7 +1,9 @@
+import { useState } from "react";
+import { currenciesRate } from "../currencies";
 import "./style.css";
 
 const Form = () => {
-
+    const [currency, setCurrency] = useState(currenciesRate[0].shortName);
 
     return (
         <form className="form">
@@ -10,11 +12,12 @@ const Form = () => {
                 <p className="form__paragraph">
                     <label>
                         <span className="form__labelText"> Waluta: </span>
-                        <select name="convertFrom" className="form__field form__field--select">
-                            <option value="pln">PLN (Polski Złoty)</option>
-                            <option value="eur">EUR (Euro)</option>
-                            <option value="gbp">GBP (Brytyjski Funt)</option>
-                            <option value="usd">USD (Amerykański Dolar)</option>
+                        <select onChange={({ target }) => setCurrency(target.value)} name="convertFrom" className="form__field form__field--select">
+                            {currenciesRate.map(currency => (
+                                <option key={currency.shortName} value={currency.shortName}>
+                                    {currency.name}
+                                </option>
+                            ))}
                         </select>
                     </label>
                 </p>
@@ -35,11 +38,12 @@ const Form = () => {
                 <p className="form__paragraph">
                     <label>
                         <span className="form__labelText"> Waluta: </span>
-                        <select name="convertTo" className="form__field form__field--select">
-                            <option value="pln">PLN (Polski Złoty)</option>
-                            <option value="eur" selected>EUR (Euro)</option>
-                            <option value="gbp">GBP (Brytyjski Funt)</option>
-                            <option value="usd">USD (Amerykański Dolar)</option>
+                        <select onChange={({ target }) => setCurrency(target.value)} name="convertTo" className="form__field form__field--select">
+                            {currenciesRate.map(currency => (
+                                <option key={currency.shortName} value={currency.shortName}>
+                                    {currency.name}
+                                </option>
+                            ))}
                         </select>
                     </label>
                 </p>
