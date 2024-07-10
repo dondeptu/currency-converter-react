@@ -1,15 +1,21 @@
 import { useState } from "react";
-import { currenciesRate } from "../currencies";
+import { currenciesRate } from "../currenciesRate";
 import "./style.css";
+import Result from "./Result";
 
-const Form = () => {
+const Form = ({ result, calculateResult }) => {
     const [currency, setCurrency] = useState(currenciesRate[0].shortName);
     const [amount, setAmount] = useState("");
 
+    const onSubmit = (event) => {
+        event.preventDefault();
+        calculateResult(currency, amount);
+    };
+
     return (
-        <form className="form">
+        <form onSubmit={onSubmit} className="form">
             <fieldset className="form__fieldset">
-                <legend className="form__legend">Przelicz z:</legend>
+                <legend className="form__legend">Zamień na złotówki:</legend>
                 <p className="form__paragraph">
                     <label>
                         <span className="form__labelText"> Waluta: </span>
@@ -44,35 +50,8 @@ const Form = () => {
                     </label>
                 </p>
             </fieldset>
-            <div className="form__buttons">
-                <button className="form__button">Przelicz</button>
-                <button className="form__button" type="button">Zamień</button>
-            </div>
-            <fieldset className="form__fieldset">
-                <legend className="form__legend">Przelicz na:</legend>
-                <p className="form__paragraph">
-                    <label>
-                        <span className="form__labelText"> Waluta: </span>
-                        <select
-                            onChange={({ target }) => setCurrency(target.value)}
-                            name="convertTo"
-                            className="form__field form__field--select"
-                        >
-                            {currenciesRate.map(currency => (
-                                <option key={currency.shortName} value={currency.shortName}>
-                                    {currency.name}
-                                </option>
-                            ))}
-                        </select>
-                    </label>
-                </p>
-                <p className="form__paragraph">
-                    <label>
-                        <span className="form__labelText"> Wynk: </span>
-                        <input name="amountAfterConvert" readOnly className="form__field" />
-                    </label>
-                </p>
-            </fieldset>
+            <button className="form__button">Przelicz</button>
+            <Result result={result} />
         </form>
     );
 };
