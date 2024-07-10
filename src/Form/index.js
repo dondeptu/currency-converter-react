@@ -4,6 +4,7 @@ import "./style.css";
 
 const Form = () => {
     const [currency, setCurrency] = useState(currenciesRate[0].shortName);
+    const [amount, setAmount] = useState("");
 
     return (
         <form className="form">
@@ -12,7 +13,11 @@ const Form = () => {
                 <p className="form__paragraph">
                     <label>
                         <span className="form__labelText"> Waluta: </span>
-                        <select onChange={({ target }) => setCurrency(target.value)} name="convertFrom" className="form__field form__field--select">
+                        <select
+                            onChange={({ target }) => setCurrency(target.value)}
+                            name="convertFrom"
+                            className="form__field form__field--select"
+                        >
                             {currenciesRate.map(currency => (
                                 <option key={currency.shortName} value={currency.shortName}>
                                     {currency.name}
@@ -24,8 +29,18 @@ const Form = () => {
                 <p className="form__paragraph">
                     <label>
                         <span className="form__labelText"> Kwota: </span>
-                        <input type="number" name="amountToConvert" required min="1" step="any" placeholder="1"
-                            autofocus className="form__field" />
+                        <input
+                            value={amount}
+                            onChange={({ target }) => setAmount(target.value)}
+                            type="number"
+                            name="amountToConvert"
+                            required
+                            min="1"
+                            step="any"
+                            placeholder="1"
+                            autoFocus
+                            className="form__field"
+                        />
                     </label>
                 </p>
             </fieldset>
@@ -38,7 +53,11 @@ const Form = () => {
                 <p className="form__paragraph">
                     <label>
                         <span className="form__labelText"> Waluta: </span>
-                        <select onChange={({ target }) => setCurrency(target.value)} name="convertTo" className="form__field form__field--select">
+                        <select
+                            onChange={({ target }) => setCurrency(target.value)}
+                            name="convertTo"
+                            className="form__field form__field--select"
+                        >
                             {currenciesRate.map(currency => (
                                 <option key={currency.shortName} value={currency.shortName}>
                                     {currency.name}
@@ -49,8 +68,8 @@ const Form = () => {
                 </p>
                 <p className="form__paragraph">
                     <label>
-                        <span className="form__labelText"> Kwota: </span>
-                        <input name="amountAfterConvert" readonly className="form__field" />
+                        <span className="form__labelText"> Wynk: </span>
+                        <input name="amountAfterConvert" readOnly className="form__field" />
                     </label>
                 </p>
             </fieldset>
