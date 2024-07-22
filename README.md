@@ -1,6 +1,6 @@
 <p align="center"><img src="for_README/my-character.gif" width="130"/></p>
 
-# To do list
+# Currency converter
 
 Hi! This is a simple currency converter I created as part of learning interactions in React.js.<br>
 The user can choose from the following currencies: EUR, GBP, USD, and then convert them to Polish zlotys (PLN).<br>
