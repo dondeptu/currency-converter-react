@@ -4,6 +4,20 @@
     flex-direction: column;
 }
 
+.form__grid {
+    display: grid;
+    grid-template-columns: 80px minmax(100px, 300px);
+    align-items: center;
+    gap: 10px;
+}
+
+@media(max-width: 380px) {
+    .form__grid {
+        grid-template-columns: minmax(10px, 210px);
+        gap: 5px;
+    }
+}
+
 .form__fieldset {
     background-color: hsl(198deg 35% 90% / 71%);
     border: 1px solid #bbb;
@@ -20,24 +34,14 @@
 }
 
 .form__paragraph {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.form__labelText {
-    width: 100%;
-    max-width: 100px;
-    display: inline-block;
-    margin-right: 5px;
-    text-align: left;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
 }
 
 .form__field {
     border: 1px solid #d88f08;
     padding: 10px;
-    width: 100%;
-    max-width: 250px;
     border-radius: 3px;
 }
 

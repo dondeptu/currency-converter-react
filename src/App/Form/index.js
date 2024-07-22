@@ -17,8 +17,8 @@ const Form = ({ result, calculateResult }) => {
             <fieldset className="form__fieldset">
                 <legend className="form__legend">Zamień na złotówki:</legend>
                 <p className="form__paragraph">
-                    <label>
-                        <span className="form__labelText"> Waluta: </span>
+                    <label className="form__grid">
+                        <span> Waluta: </span>
                         <select
                             onChange={({ target }) => setCurrency(target.value)}
                             name="convertFrom"
@@ -33,8 +33,8 @@ const Form = ({ result, calculateResult }) => {
                     </label>
                 </p>
                 <p className="form__paragraph">
-                    <label>
-                        <span className="form__labelText"> Kwota: </span>
+                    <label className="form__grid">
+                        <span> Kwota: </span>
                         <input
                             value={amount}
                             onChange={({ target }) => setAmount(target.value)}
