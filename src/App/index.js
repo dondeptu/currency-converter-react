@@ -9,11 +9,7 @@ function App() {
     const calculateResult = (currency, amount) => {
         const rate = currenciesRate.find(({ shortName }) => shortName === currency).rate;
 
-        setResult({
-            inputAmount: amount,
-            currency,
-            getResult: amount / rate,
-        });
+        setResult(amount * rate);
     };
 
     return (
