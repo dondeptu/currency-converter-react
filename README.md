@@ -4,7 +4,6 @@
 
 Hi! This is a simple currency converter I created as part of learning interactions in React.js.<br>
 The user can choose from the following currencies: EUR, GBP, USD, and then convert them to Polish zlotys (PLN).<br>
-I used the state hook for this.
 
 ## Demo
 
@@ -21,6 +20,13 @@ Project is created with:
 ![html badge](https://img.shields.io/badge/HTML-%23E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![js badge](https://img.shields.io/badge/JavaScript-%23F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![react badge](https://img.shields.io/badge/REACT.JS-%2361DAFB?style=for-the-badge&logo=react&logoColor=black)
+
+- Hooks:
+    - useState
+    - useEffect
+- interval
+- Immutability
+- BEM
 
 # Getting Started with Create React App
 
