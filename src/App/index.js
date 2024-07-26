@@ -1,5 +1,6 @@
 import Form from "./Form";
 import "./App.css";
+import { Clock } from "./Clock";
 
 function App() {
     return (
@@ -8,6 +9,7 @@ function App() {
                 <h1 className="app__header">Kalkulator walut</h1>
             </header>
             <main>
+                <Clock />
                 <Form />
             </main>
         </div>
