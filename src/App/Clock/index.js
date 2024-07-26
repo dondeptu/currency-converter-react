@@ -21,11 +21,11 @@ export const Clock = () => {
                 undefined,
                 {
                     weekday: "long",
-                    day: "numeric",
+                    day: "2-digit",
                     month: "long",
-                    hour: "numeric",
-                    minute: "numeric",
-                    second: "numeric"
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    second: "2-digit"
                 },
             )}
         </div>
