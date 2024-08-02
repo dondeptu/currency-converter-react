@@ -4,15 +4,15 @@ export const Wrapper = styled.p`
     display: flex;
     justify-content: center;
     font-size: 18px;
-    background-color: hsl(198deg 35% 90% / 71%);
-    border: 1px solid #bbb;
+    background-color: ${({ theme }) => theme.colors.transparentBlue};
+    border: 1px solid ${({ theme }) => theme.colors.grey};
     border-radius: 3px;
     padding: 15px;
     margin: 0;
-    box-shadow: 0 0 3px #cccccc;
+    box-shadow: 0 0 3px ${({ theme }) => theme.colors.shadows};
 `;
 
 export const OutAmount = styled.span`
-    color: #d88f08;
+    color: ${({ theme }) => theme.colors.orange};
     font-weight: 700;
 `;

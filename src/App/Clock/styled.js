@@ -6,8 +6,8 @@ export const StyledClock = styled.div`
     margin: 10px;
     padding: 5px;
     font-family: "Inconsolata", monospace;
-    background-color: hsl(198deg 35% 90% / 71%);
-    border: 1px solid #bbb;
+    background-color: ${({ theme }) => theme.colors.transparentBlue};
+    border: 1px solid ${({ theme }) => theme.colors.grey};
     border-radius: 3px;
-    box-shadow: 0 0 3px #cccccc;
+    box-shadow: 0 0 3px ${({ theme }) => theme.colors.shadows};
 `;

@@ -19,19 +19,19 @@ export const Grid = styled.label`
 `;
 
 export const Fieldset = styled.fieldset`
-    background-color: hsl(198deg 35% 90% / 71%);
-    border: 1px solid #bbb;
+    background-color: ${({ theme }) => theme.colors.transparentBlue};
+    border: 1px solid ${({ theme }) => theme.colors.grey};
     border-radius: 3px;
     padding: 10px;
-    box-shadow: 0 0 3px #cccccc;
+    box-shadow: 0 0 3px ${({ theme }) => theme.colors.shadows};
 `;
 
 export const Legend = styled.legend`
     font-size: 20px;
-    background-color: #d88f08;
+    background-color: ${({ theme }) => theme.colors.orange};
     padding: 5px;
     border-radius: 5px;
-    color: white;
+    color: ${({ theme }) => theme.colors.white};
 `;
 
 export const Paragraph = styled.p`
@@ -41,21 +41,21 @@ export const Paragraph = styled.p`
 `;
 
 export const Field = styled.select`
-    border: 1px solid #d88f08;
+    border: 1px solid ${({ theme }) => theme.colors.orange};
     padding: 10px;
     border-radius: 3px;
 
     &:active {
-        border-color: #aa7106;
+        border-color: ${({ theme }) => theme.colors.maiTai};
     } 
 
     &:focus {
-        border-color: #aa7106;
+        border-color: ${({ theme }) => theme.colors.maiTai};
     }
 `;
 
 export const FieldSelect = styled(Field)`
-    background-color: white;
+    background-color: ${({ theme }) => theme.colors.white};
 `;
 
 export const Button = styled.button`
@@ -64,17 +64,17 @@ export const Button = styled.button`
     padding: 10px 20px;
     border: none;
     border-radius: 6px;
-    background-color: #d88f08;
-    color: white;
+    background-color: ${({ theme }) => theme.colors.orange};
+    color: ${({ theme }) => theme.colors.white};
     font-size: 20px;
     font-weight: 700;
     transition: background-color 0.4s;
 
     &:hover {
-        background-color: #d88f08cc;
+        background-color: ${({ theme }) => theme.colors.maiTaiLight};
     }
 
     &:active {
-        background-color: #d88f089f;
+        background-color: ${({ theme }) => theme.colors.maiTaiLighter};
     }
 `;
