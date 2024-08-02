@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { currenciesRate } from "../currenciesRate";
-import "./style.css";
 import Result from "./Result";
+import { Button, Field, FieldSelect, Fieldset, Grid, Legend, Paragraph, StyledForm } from "./styled";
 
 const Form = () => {
     const [currency, setCurrency] = useState(currenciesRate[0].shortName);
@@ -20,29 +20,28 @@ const Form = () => {
     };
 
     return (
-        <form onSubmit={onSubmit} className="form">
-            <fieldset className="form__fieldset">
-                <legend className="form__legend">Zamień na złotówki:</legend>
-                <p className="form__paragraph">
-                    <label className="form__grid">
+        <StyledForm onSubmit={onSubmit}>
+            <Fieldset>
+                <Legend>Zamień na złotówki:</Legend>
+                <Paragraph>
+                    <Grid>
                         <span> Waluta: </span>
-                        <select
+                        <FieldSelect
                             onChange={({ target }) => setCurrency(target.value)}
                             name="convertFrom"
-                            className="form__field form__field--select"
                         >
                             {currenciesRate.map(currency => (
                                 <option key={currency.shortName} value={currency.shortName}>
                                     {currency.name}
                                 </option>
                             ))}
-                        </select>
-                    </label>
-                </p>
-                <p className="form__paragraph">
-                    <label className="form__grid">
+                        </FieldSelect>
+                    </Grid>
+                </Paragraph>
+                <Paragraph>
+                    <Grid>
                         <span> Kwota: </span>
-                        <input
+                        <Field as="input"
                             value={amount}
                             onChange={({ target }) => setAmount(target.value)}
                             type="number"
@@ -52,14 +51,13 @@ const Form = () => {
                             step="any"
                             placeholder="1"
                             autoFocus
-                            className="form__field"
                         />
-                    </label>
-                </p>
-            </fieldset>
-            <button className="form__button">Przelicz</button>
+                    </Grid>
+                </Paragraph>
+            </Fieldset>
+            <Button>Przelicz</Button>
             <Result result={result} />
-        </form>
+        </StyledForm>
     );
 };
 
