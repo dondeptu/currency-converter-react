@@ -12,7 +12,7 @@ export const Grid = styled.label`
     align-items: center;
     gap: 10px;
 
-    @media(max-witdh: 380px) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
         grid-template-columns: minmax(10px, 210px);
         gap: 5px;
     }

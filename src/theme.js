@@ -9,4 +9,7 @@ export const theme = {
         shadows: "#cccccc",
         white: "#fff",
     },
+    breakpoints: {
+        mobileMax: 380,
+    },
 };
