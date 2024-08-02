@@ -1,5 +1,7 @@
-.clock {
-    display: flex;
+import styled from "styled-components";
+
+export const StyledClock = styled.div`
+     display: flex;
     justify-content: flex-end;
     margin: 10px;
     padding: 5px;
@@ -8,4 +10,4 @@
     border: 1px solid #bbb;
     border-radius: 3px;
     box-shadow: 0 0 3px #cccccc;
-}
+`;
