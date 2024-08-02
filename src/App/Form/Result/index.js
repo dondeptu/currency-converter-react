@@ -1,15 +1,15 @@
-import "./style.css";
+import { OutAmount, Wrapper } from "./styled";
 
 const Result = ({ result }) => (
-    <p className="result">
+    <Wrapper>
         Wynik:&nbsp;
         {result && (
             <>
-                <span className="result__outAmount">{(+result).toFixed(2)}</span>
+                <OutAmount>{(+result).toFixed(2)}</OutAmount>
                 &nbsp;PLN
             </>
         )}
-    </p>
+    </Wrapper>
 );
 
 export default Result;

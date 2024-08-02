@@ -1,4 +1,6 @@
-.result {
+import styled from "styled-components";
+
+export const Wrapper = styled.p`
     display: flex;
     justify-content: center;
     font-size: 18px;
@@ -8,9 +10,9 @@
     padding: 15px;
     margin: 0;
     box-shadow: 0 0 3px #cccccc;
-}
+`;
 
-.result__outAmount {
+export const OutAmount = styled.span`
     color: #d88f08;
     font-weight: 700;
-}
+`;
