@@ -1,18 +1,18 @@
 import Form from "./Form";
-import "./App.css";
+import { Header, Wrapper } from "./styled";
 import { Clock } from "./Clock";
 
 function App() {
     return (
-        <div className="app">
+        <Wrapper>
             <header>
-                <h1 className="app__header">Kalkulator walut</h1>
+                <Header>Kalkulator walut</Header>
             </header>
             <main>
                 <Clock />
                 <Form />
             </main>
-        </div>
+        </Wrapper>
     );
 }
 
