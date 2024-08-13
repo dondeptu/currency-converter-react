@@ -99,6 +99,6 @@ export const LoadingStatus = styled.div`
     
 `;
 
-export const ErrorStatus = styled.div`
-    background-color: red;
+export const ErrorStatus = styled(LoadingStatus)`
+    color: ${({ theme }) => theme.colors.crimson};
 `;

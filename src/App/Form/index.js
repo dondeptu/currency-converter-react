@@ -32,7 +32,7 @@ const Form = () => {
             </LoadingStatus>)
             : ratesData.status === "error" ? (
                 <ErrorStatus>
-                    Coś poszło nie tak!
+                    Coś poszło nie tak... <br /> Odśwież stronę lub spróbuj ponownie później.
                 </ErrorStatus>)
                 : (
                     <StyledForm onSubmit={onSubmit}>
