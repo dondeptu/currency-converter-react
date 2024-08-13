@@ -13,7 +13,7 @@ export const useRatesData = () => {
 
                 setRatesData({
                     status: "success",
-                    date: response.data.meta,
+                    date: response.data.meta.last_updated_at,
                     rates: response.data.data,
                 });
             } catch (error) {

@@ -1,15 +1,16 @@
 import { useState } from "react";
 import Result from "./Result";
-import { Button, Field, FieldSelect, Fieldset, Grid, Info, Legend, Paragraph, StyledForm } from "./styled";
+import { Button, Field, FieldSelect, Fieldset, Grid, Legend, Paragraph, StyledForm } from "./styled";
 import { useRatesData } from "./useRatesData";
+import { RatesUpdatedTime } from "./RatesUpdatedTime";
 
 const Form = () => {
     const ratesData = useRatesData();
-    console.log(ratesData);
-
     const [currency, setCurrency] = useState("EUR");
     const [amount, setAmount] = useState("");
     const [result, setResult] = useState(null);
+
+    console.log(ratesData);
 
     const calculateResult = (currency, amount) => {
         const rate = ratesData.rates[currency].value;
@@ -62,7 +63,7 @@ const Form = () => {
                     <Button>Przelicz</Button>
                 </Paragraph>
                 <Paragraph>
-                    <Info>Kursy walut na dzień</Info>
+                    <RatesUpdatedTime ratesData={ratesData} />
                 </Paragraph>
             </Fieldset>
             <Result result={result} />

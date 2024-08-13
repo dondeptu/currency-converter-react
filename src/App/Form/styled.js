@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+// export const Wrapper = styled.span`
+//     margin: 0px;
+//     padding: 10px;
+//     font-size: 15px;
+// `;
+
 export const StyledForm = styled.form`
     margin: 10px;
     display: flex;
@@ -24,12 +30,6 @@ export const Fieldset = styled.fieldset`
     border-radius: 3px;
     padding: 10px;
     box-shadow: 0 0 3px ${({ theme }) => theme.colors.shadows};
-`;
-
-export const Info = styled.p`
-    margin: 0px;
-    padding: 10px;
-    font-size: 15px;
 `;
 
 export const Legend = styled.legend`
