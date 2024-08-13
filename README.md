@@ -3,8 +3,11 @@
 # Currency converter
 
 Hi! This is a simple currency converter I created as part of learning interactions in React.js.<br>
-The user can choose from the following currencies: EUR, GBP, USD, and then convert them to Polish zlotys (PLN).<br>
-It also displays the current date and time.
+The user can choose their desired currency and convert it to Polish zlotys (PLN). The exchange rates are fetched from an API.<br>
+It also displays the current date and time, as well as the date of the last exchange rate update.<br>
+Additionally, I added an animated square using `setInterval` for practice.
+
+
 
 ## Demo
 
@@ -22,12 +25,19 @@ Project is created with:
 ![js badge](https://img.shields.io/badge/JavaScript-%23F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![react badge](https://img.shields.io/badge/REACT.JS-%2361DAFB?style=for-the-badge&logo=react&logoColor=black)
 
+- API
+    - Async/Await
+    - Axios
 - Hooks:
     - useState
     - useEffect
 - Custom hooks:
     - useCurrentDate
+    - useRatesData
+- Error handling 
+    - try/catch
 - setInterval
+- setTimeout
 - Styled Components
     - GlobalStyle
 - Theme
@@ -35,7 +45,10 @@ Project is created with:
     - Grid
     - Flexbox
 - Media Queries
+- Normalize.css
 - Immutability
+- Webpack
+- Create React App
 
 # Getting Started with Create React App
 
