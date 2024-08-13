@@ -1,17 +1,20 @@
 import { useState } from "react";
-import { currenciesRate } from "../currenciesRate";
 import Result from "./Result";
 import { Button, Field, FieldSelect, Fieldset, Grid, Legend, Paragraph, StyledForm } from "./styled";
+import { useRatesData } from "./useRatesData";
 
 const Form = () => {
-    const [currency, setCurrency] = useState(currenciesRate[0].shortName);
+    const ratesData = useRatesData();
+    console.log(ratesData);
+
+    const [currency, setCurrency] = useState("EUR");
     const [amount, setAmount] = useState("");
     const [result, setResult] = useState(null);
 
     const calculateResult = (currency, amount) => {
-        const rate = currenciesRate.find(({ shortName }) => shortName === currency).rate;
+        const rate = ratesData.rates[currency].value;
 
-        setResult(amount * rate);
+        setResult(amount / rate);
     };
 
     const onSubmit = (event) => {
@@ -29,10 +32,11 @@ const Form = () => {
                         <FieldSelect
                             onChange={({ target }) => setCurrency(target.value)}
                             name="convertFrom"
+                            value={currency}
                         >
-                            {currenciesRate.map(currency => (
-                                <option key={currency.shortName} value={currency.shortName}>
-                                    {currency.name}
+                            {!!ratesData.rates && Object.keys(ratesData.rates).map(currency => (
+                                <option key={currency} value={currency}>
+                                    {currency}
                                 </option>
                             ))}
                         </FieldSelect>
