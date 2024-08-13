@@ -11,8 +11,6 @@ const Form = () => {
     const [result, setResult] = useState(null);
     const ratesData = useRatesData();
 
-    console.log(ratesData);
-
     const calculateResult = (currency, amount) => {
         const rate = ratesData.rates[currency].value;
 
