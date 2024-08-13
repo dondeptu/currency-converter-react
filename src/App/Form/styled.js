@@ -1,11 +1,5 @@
 import styled from "styled-components";
 
-// export const Wrapper = styled.span`
-//     margin: 0px;
-//     padding: 10px;
-//     font-size: 15px;
-// `;
-
 export const StyledForm = styled.form`
     margin: 10px;
     display: flex;
@@ -84,4 +78,27 @@ export const Button = styled.button`
     &:active {
         background-color: ${({ theme }) => theme.colors.maiTaiLighter};
     }
+`;
+
+export const LoadingStatus = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 10px;
+    padding: 50px 10px;
+    color: ${({ theme }) => theme.colors.orange};
+    background-color: ${({ theme }) => theme.colors.transparentBlue};
+    border: 1px solid ${({ theme }) => theme.colors.grey};
+    border-radius: 3px;
+    box-shadow: 0 0 3px ${({ theme }) => theme.colors.shadows};
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    
+`;
+
+export const ErrorStatus = styled.div`
+    background-color: red;
 `;
