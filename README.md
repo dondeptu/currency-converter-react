@@ -5,9 +5,7 @@
 Hi! This is a simple currency converter I created as part of learning interactions in React.js.<br>
 The user can choose their desired currency and convert it to Polish zlotys (PLN). The exchange rates are fetched from an API.<br>
 It also displays the current date and time, as well as the date of the last exchange rate update.<br>
-Additionally, I added an animated square using `setInterval` for practice.
-
-
+Additionally, I added an animated square using setInterval for practice, which is displayed during data loading from the API.
 
 ## Demo
 
