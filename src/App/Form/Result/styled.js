@@ -8,7 +8,6 @@ export const Wrapper = styled.p`
     border: 1px solid ${({ theme }) => theme.colors.grey};
     border-radius: 3px;
     padding: 15px;
-    margin: 0;
     box-shadow: 0 0 3px ${({ theme }) => theme.colors.shadows};
 `;
 

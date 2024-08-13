@@ -26,6 +26,12 @@ export const Fieldset = styled.fieldset`
     box-shadow: 0 0 3px ${({ theme }) => theme.colors.shadows};
 `;
 
+export const Info = styled.p`
+    margin: 0px;
+    padding: 10px;
+    font-size: 15px;
+`;
+
 export const Legend = styled.legend`
     font-size: 20px;
     background-color: ${({ theme }) => theme.colors.orange};
@@ -59,14 +65,15 @@ export const FieldSelect = styled(Field)`
 `;
 
 export const Button = styled.button`
-    margin: 30px;
+    flex: 0 1 390px;
     align-self: center;
     padding: 10px 20px;
+    margin-top: 10px;
     border: none;
     border-radius: 6px;
     background-color: ${({ theme }) => theme.colors.orange};
     color: ${({ theme }) => theme.colors.white};
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     transition: background-color 0.4s;
 

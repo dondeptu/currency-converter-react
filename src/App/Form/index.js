@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Result from "./Result";
-import { Button, Field, FieldSelect, Fieldset, Grid, Legend, Paragraph, StyledForm } from "./styled";
+import { Button, Field, FieldSelect, Fieldset, Grid, Info, Legend, Paragraph, StyledForm } from "./styled";
 import { useRatesData } from "./useRatesData";
 
 const Form = () => {
@@ -58,8 +58,13 @@ const Form = () => {
                         />
                     </Grid>
                 </Paragraph>
+                <Paragraph>
+                    <Button>Przelicz</Button>
+                </Paragraph>
+                <Paragraph>
+                    <Info>Kursy walut na dzień</Info>
+                </Paragraph>
             </Fieldset>
-            <Button>Przelicz</Button>
             <Result result={result} />
         </StyledForm>
     );
