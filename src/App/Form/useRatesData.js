@@ -13,14 +13,14 @@ export const useRatesData = () => {
 
                 setRatesData({
                     status: "success",
-                    data: response.data.meta,
+                    date: response.data.meta,
                     rates: response.data.data,
                 });
             } catch (error) {
                 console.error(error);
                 setRatesData({
                     status: "error",
-                    data: null,
+                    date: null,
                 });
             }
         }
