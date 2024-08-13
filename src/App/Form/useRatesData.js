@@ -24,7 +24,7 @@ export const useRatesData = () => {
                 });
             }
         }
-        setTimeout(fetchApiData, 1000);
+        setTimeout(fetchApiData, 2000);
     }, []);
 
     return ratesData;
