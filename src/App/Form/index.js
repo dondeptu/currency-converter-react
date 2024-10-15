@@ -22,62 +22,68 @@ const Form = () => {
         calculateResult(currency, amount);
     };
 
-    return (
-        ratesData.status === "loading" ? (
+    if (ratesData.status === "loading") {
+        return (
             <LoadingStatus>
                 Zaczekaj chwilę.<br /> Ładuję aktualne kursy walut...
                 <LoadingAnimation />
-            </LoadingStatus>)
-            : ratesData.status === "error" ? (
-                <ErrorStatus>
-                    Coś poszło nie tak... <br /> Odśwież stronę lub spróbuj ponownie później.
-                </ErrorStatus>)
-                : (
-                    <StyledForm onSubmit={onSubmit}>
-                        <Fieldset>
-                            <Legend>Zamień na złotówki:</Legend>
-                            <Paragraph>
-                                <Grid>
-                                    <span> Waluta: </span>
-                                    <FieldSelect
-                                        onChange={({ target }) => setCurrency(target.value)}
-                                        name="convertFrom"
-                                        value={currency}
-                                    >
-                                        {!!ratesData.rates && Object.keys(ratesData.rates).map(currency => (
-                                            <option key={currency} value={currency}>
-                                                {currency}
-                                            </option>
-                                        ))}
-                                    </FieldSelect>
-                                </Grid>
-                            </Paragraph>
-                            <Paragraph>
-                                <Grid>
-                                    <span> Kwota: </span>
-                                    <Field as="input"
-                                        value={amount}
-                                        onChange={({ target }) => setAmount(target.value)}
-                                        type="number"
-                                        name="amountToConvert"
-                                        required
-                                        min="1"
-                                        step="any"
-                                        placeholder="1"
-                                        autoFocus
-                                    />
-                                </Grid>
-                            </Paragraph>
-                            <Paragraph>
-                                <Button>Przelicz</Button>
-                            </Paragraph>
-                            <Paragraph>
-                                <RatesUpdatedTime ratesData={ratesData} />
-                            </Paragraph>
-                        </Fieldset>
-                        <Result result={result} />
-                    </StyledForm>
-                )
+            </LoadingStatus>
+        );
+    }
+
+    if (ratesData.status === "error") {
+        return (
+            <ErrorStatus>
+                Coś poszło nie tak... <br /> Odśwież stronę lub spróbuj ponownie później.
+            </ErrorStatus>
+        );
+    }
+
+    return (
+        <StyledForm onSubmit={onSubmit}>
+            <Fieldset>
+                <Legend>Zamień na złotówki:</Legend>
+                <Paragraph>
+                    <Grid>
+                        <span> Waluta: </span>
+                        <FieldSelect
+                            onChange={({ target }) => setCurrency(target.value)}
+                            name="convertFrom"
+                            value={currency}
+                        >
+                            {!!ratesData.rates && Object.keys(ratesData.rates).map(currency => (
+                                <option key={currency} value={currency}>
+                                    {currency}
+                                </option>
+                            ))}
+                        </FieldSelect>
+                    </Grid>
+                </Paragraph>
+                <Paragraph>
+                    <Grid>
+                        <span> Kwota: </span>
+                        <Field as="input"
+                            value={amount}
+                            onChange={({ target }) => setAmount(target.value)}
+                            type="number"
+                            name="amountToConvert"
+                            required
+                            min="1"
+                            step="any"
+                            placeholder="1"
+                            autoFocus
+                        />
+                    </Grid>
+                </Paragraph>
+                <Paragraph>
+                    <Button>Przelicz</Button>
+                </Paragraph>
+                <Paragraph>
+                    <RatesUpdatedTime ratesData={ratesData} />
+                </Paragraph>
+            </Fieldset>
+            <Result result={result} />
+        </StyledForm>
     );
 };
 
